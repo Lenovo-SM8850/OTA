@@ -1,0 +1,24 @@
+{
+  "response": [
+    {
+      "maintainer": "miner7222",
+      "currently_maintained": true,
+      "oem": "Lenovo",
+      "device": "Legion Tab Gen 5 (TB323FU)",
+      "filename": "EvolutionX-17.0-20261006-baldur-12.2-Unofficial.zip",
+      "download": "https://downloads.sourceforge.net/project/lenovo-sm8850/baldur/Evolution%20X/EvolutionX-17.0-20261006-baldur-12.2-Unofficial.zip",
+      "timestamp": 1791255698,
+      "md5": "398630d407bf48cb0b5129c80d79aefc",
+      "sha256": "a0b8db90f0bccd5e353647d0e419ec1e1d3dbbacd7017d37a01b8841da4c6477",
+      "size": 3422703506,
+      "version": "12.2",
+      "buildtype": "userdebug",
+      "forum": "",
+      "firmware": "",
+      "paypal": "",
+      "github": "miner7222",
+      "initial_installation_images": [],
+      "extra_images": []
+    }
+  ]
+}
