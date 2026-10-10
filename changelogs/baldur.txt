@@ -1,2 +1,306 @@
-2026-10-06
-- Initial release
+This is Android 17 QPR0 with October 2026 security patches
+
+Notes:
+==============================
+- LineageOS-based source.
+- Always dirty flash at your own risk. If your device bootloops, revert to an older build that boots.
+- First installation: flash the EDL image package (-EDL.7z) with LTBox.
+- Includes Dolby Atmos and Dolby Vision.
+
+Device changes:
+==============================
+Fix SD card support
+Fix Lenovo Tab Pen Plus support
+Fix the corrupted recovery screen
+Fix the oversized lock screen avatar
+Fix the battery light switch being off after setup
+Update kernel
+Pen: Bootstrap HID pens with an activity-scoped refresh cap
+Pen: Notify only about pairing
+scsi: ufs: Restore Baldur vendor maintenance features
+media: camera: Release haptic actuator rails
+sm8850-common: Use PRC display color libraries
+sm8850-common: Restore stock vendor feature properties
+sm8850-common: Set the hardware revision from the board ID
+sm8850-common: Label additional Codec2 services
+sm8850-common: Allow the audio HAL to read boot status
+sm8850-common: Label the UFS discard limit
+Device tree cleanups
+
+Exclusive ROM changes:
+==============================
+Fix Dolby Atmos having no effect while music plays in some apps
+Fix Circle to Search not working right after setup
+Fix touches being blocked beside Dynamic Bar notifications
+Fix the status bar clock staying white on light backgrounds
+Fix Evolver crashing on the Pixel Launcher themed icon option
+Fix Data Saver toggles showing on Wi-Fi-only devices
+SystemUI: Offer Wallet and Controls tiles only with an installed provider
+gameprops: Add a OnePlus 15 spoof profile
+Evolver: Add a OnePlus 15 spoof profile
+translations: Cover the new Evolution X Settings strings
+translations: Add the OnePlus 15 spoof profile label
+translations: Write Korean titles as short phrases
+translations: Refine Korean Evolution X Settings strings
+translations: End Korean sentences with a period
+translations: Keep Reality in the Korean display engine title
+translations: Follow the updated boot animation list
+GameSpace: Name the danmaku tile as a notification feature in Korean
+Updater: Write Korean dialog titles as short phrases
+
+Notable ROM changes:
+==============================
+[ax_sandbox] improving ui | fixing issues
+[axion_sdk] ax sandbox shared code integration
+[bugfix] fixing app list performance
+[bugfix] fixing multi-user issue
+[bugfix] fixing | improving app list icon rendering
+[ui] m3e floating bar
+a2dp: Add LHDC V3 source codec
+a2dp: Remember the codec chosen for a device
+Accept operating environment values 0x01-0x06 in Country IE
+aconfig: Enable cloud search and album features in media picker
+aconfig: Enable iconshapes and theme packs
+aconfig: Enable new reveal animation for QS tiles
+Add a11y for back buttons in toolbars
+Add kill button to notification guts [1/2]
+Add L2CAP and A2DP offload coex mechanism for MTK
+Add the rest of Cloudflare and Quad9 Private DNS options
+Adding theme engine interface
+Allow to suppress notifications sound/vibration if screen is ON [1/2]
+apn: Make "type" optional
+apn: Remove YT and separate Palestinian APNs from IL
+AppWidgetServiceImpl: Fix disappearing widgets on devices with a work profile
+audiopolicy: Preserve HIDL routability for dynamic devices
+AudioService: Cancel old toasts when switching ringer mode
+base: Add DND & Rate settings to flash on call [1/3]
+base: Add Flashlight blink on incoming calls [1/3]
+base: Add option to cycle through ringer modes [1/2]
+base: Add readable annotation for Ringtone2
+base: Fix themed battery state colors
+base: Phone ringtone setting for Multi SIM device [1/2]
+Bluetooth timeout feature
+Bluetooth: Disable Bluetooth auto-on feature by default
+BondStateMachine: Allow skipping confirm for some remotes
+bootanimation: Update from Pixel 11 series
+ClientModeImpl: Move updateCurrentConnectionInfo() before broadcast
+common: Allow init in recovery to write to proc_firmware_config
+config: Build AxThemeStore
+config: Replace Gallery2 with Canvas
+core: Make CHARGE_OPTIMIZATION_MODE readable for pixel agent
+custom_rom_hide: Adding apps filter hooks
+custom_rom_hide: Exempt zygotes for custom rom path
+custom_rom_hide: Fix custom rom artifacts detection
+custom_rom_hide: Hide ROM packages on core UIDs from unprivileged apps
+DeskClock: androidx.core:core:1.18.0 -> androidx.core:core:1.19.0
+DeskClock: Steal org.gradle.jvmargs from Aperture
+DeskClock: Use MetricStyle for the stopwatch and timer notifications
+devicesettings: Remove unused strings
+DisplayManager: Add requestMaxRefreshRate() API
+Drawables: Dark mode support for app installation restriction icon
+Evolver: Add customization for bold clock and period separator
+Evolver: Add option to set volume slider below brightness slider
+Evolver: Drop Google Monet [2/2]
+Evolver: Recommend only the Pixel 6a for PIF
+ExactCalculator: Remove stale translation files
+extras: sdk: Add reusable search utils
+extras: sdk: Do not relock app when system sub-activity takes focus in the same task
+extras: sdk: Fix leak in sandbox service
+extras: sdk: Fixing m3e <-> AOSP SettingsLib visual disrepancies
+extras: sdk: Refactor sandbox for migration
+extras: sdk: Update ax_compose for multi user API
+extras: Update BCR to Version v3.9
+fastbootd: Start binder threadpool
+Fix lint error about calling @WorkerThread method on UI thread
+Fix PathWrapper::addPath self-add
+Fix SimPhonebookProviderTest flakiness and leaks
+Fix Wi-Fi hotspot freeze on driver failure
+fixing ShadeDialogContextRepo crash
+fixup! le_audio: Allow overriding the bit depth
+fixup! Settings: Expose radio info (*#*#4636#*#*)
+fixup! SystemUI: Add auto brightness toggle in brightness slider in new compose QS
+fixup: Forward port CM Screen Security settings (1/2)
+generated_kernel_includes: sanitize linux/eventpoll.h
+HeadsUp: add timeout option (1/2)
+hwui: Fix Paint.getFillPath when src and dst alias
+IE: Add Lidl Connect
+ims: Add soong namespace
+ims: Sort soong namespace declaration
+Increase 5 GHz network signal tolerance
+init: Remove sys property triggering custom rom detect
+kernel: Allow passing Bazel flags from BoardConfig
+kernel: Don't have devices specify a system_dlkm load list
+l2cap: Skip offload coex buffer cap when nothing is reserved
+Launcher3: Fix bottom insets
+Launcher3: Make nav bar respect bottom of display cutout
+Launcher3: Start-align the SUW back nav on expressive
+Launcher3: Support multiple display densities for default grid size
+Launcher3: Treat built-in secondary displays like the primary display
+Launcher3: Use correct nav bar orientation on default landscape displays
+libdmabufheap: Restore ION support behind a soong config
+Messaging: Skip boot notifications when not the default SMS app
+Move Bluetooth timeout back to AOSP settings
+NP: Update Nepal apns
+NSSLC: Prevent possible memory leak
+offload: Make visible to device
+OmniJaws: Add a weather pebble widget
+OmniJaws: Add shortcut for location settings when disabled
+OmniJaws: Add strings for the weather pebble widget
+OmniJaws: Better handling for custom location
+OmniJaws: Force refresh dashboard screen when changing provider
+OmniJaws: Make current location more reliable
+OmniJaws: Remove fallback keys from OpenWeatherMapProvider
+OmniJaws: Remove hardcoded unused display labels
+Open app when clicking on icon in App Info
+overlay: Update pallete for first boot
+phone JE when select image from phone in FDNList interface.
+PIF: Default to the Pixel 6a canary fingerprint
+pixel-style: Update Pixel charger from mustang CP2A.260805.005
+power/policy: Make wake and doze double-tap toggles independent
+Prevent recovery code dropdown from showing up too early
+qcom: vendor: Allow \`vendor_init\` to set \`vendor_ssr_prop\` property
+QS footer icon visibilities [1/2]
+QSFooter: Launch The Evolver Settings when long clicking settings
+recovery: Do not format /cache and /metadata with data_fstype
+recovery: Fix potential integer overflow when passing payload offset
+resources: Add string for OmniJaws custom location handling
+resources: Add strings for OmniJaws
+resources: Update strings for OmniJaws
+resources: Update strings for OmniJaws location
+RESTRICT AUTOMERGE: Fix remote DoS in decodeWapPdu (b/517376969)
+Revert "fixup! Implement edge long swipe gesture to new back gesture affordance"
+Revert "Remove InputManager.getInstance()"
+Revert^2 "cm: enable lockscreen rotation option"
+Ringer: There should really not be an observer here
+RingtoneManager: Set an default ringtone for the SIM 2
+RippleView: stop leaking animator listeners across ripples
+RunningServices: Remove DeveloperOptionAwareMixin interface
+sandbox: Adding multi user support
+sandbox: Refactor for sdk migration
+sandbox: Update repository link
+sandbox: Update repository link again
+sepolicy: Allow permissive in recovery on user builds
+sepolicy: Allow servicemanager to send callbacks to usbd
+sepolicy: Allow system app to access sysfs_leds
+sepolicy: Include versioned genfs labels in recovery
+sepolicy: Label NXP NFC debug mask property
+sepolicy: Make su domain permissive on user builds
+Settings: Add icon for 'WiFi cellular data fallback'
+Settings: Add icon for 'WiFi direct'
+Settings: Add icon for 'WiFi timeout'
+Settings: Add icon for emergency broadcasts
+Settings: Add icon for WEP in wifi network settings
+Settings: Add icon for WiFi -> Install certificates
+Settings: Add missing icon for media output
+Settings: Add option to cycle through ringer modes [2/2]
+Settings: Address a memory leak
+Settings: Allow dismissing suggestions
+Settings: Expose clipboard auto clear setting [1/2]
+Settings: Expose clipboard auto clear setting [2/2]
+Settings: Fall back to legacy network query when scan is unsupported
+Settings: Fix rest of the edit menu icon tint
+Settings: Fix slice data illegal state in credentials
+Settings: gestures: Enable Cycle through ringer modes for all
+Settings: Give the About phone logo a K-pop holographic look
+Settings: Phone ringtone setting for Multi SIM device [2/2]
+Settings: Prevent IllegalArgumentException in storage settings
+Settings: Register broadcast receiver onStart in NfcAndPaymentFragmentController
+Settings: Remove remaining hardcoded fonts
+Settings: Skip auth for WiFi net share when unlocked in the last 60s
+Settings: Use font configs instead fonts directly
+SharedConnectivityManager: Don't crash on service registerCallback failure
+stagefright: Hide emitting non-AOSP symbol
+StatusBarIconController: Don't crash at boot
+SystemUI: Add affordance shorcut for AI Voice Assistant
+SystemUI: Add animation styles for QS tile toggle
+SystemUI: Add back gesture, charging anim, battery themes support
+SystemUI: Add blur QS tile
+SystemUI: Add brightness slider shapes
+SystemUI: Add charging bolt indicator for text-only battery style
+SystemUI: Add classic QS panel style for tiles
+SystemUI: Add customization for bold clock and period separator
+SystemUI: Add customization for proper circle QS tile shape
+SystemUI: Add customization to select QS tile shape
+SystemUI: Add gradient customization
+SystemUI: Add haptic feedback for qs footer actions
+SystemUI: Add less boring heads up option
+SystemUI: Add missing check for lens button in screenshot actions
+SystemUI: Add more indicators for text-only battery style
+SystemUI: Add more QS tile animation styles
+SystemUI: Add notification row transluency toggle
+SystemUI: Add QS tile layout settings [1/2]
+SystemUI: Add switch for compact HUN [1/2]
+SystemUI: Add toggle for media squiggle animation
+SystemUI: Add toggle for QS tile haptic feedback
+SystemUI: Add toggle for translucent notifications on lockscreen
+SystemUI: Add volume slider and ringer mode in QS panel
+SystemUI: Align keyguard carrier text with status bar
+SystemUI: Apply colored icons and notification count to new icon area controller
+SystemUI: Apply wifi and signal icon styles last
+SystemUI: charging: fix crash from stale ripple cleanup callbacks
+SystemUI: ConfigurationControllerImpl: Avoid NullPointerException
+SystemUI: Draw UDFPS illumination dot with hardware canvas
+SystemUI: DynamicBar: Collapse expanded panel on chip tap
+SystemUI: DynamicBar: Do not tie notification alert with global heads up
+SystemUI: DynamicBar: Fix dismiss suppression for reused event ids
+SystemUI: DynamicBar: Fix duplicate media card
+SystemUI: DynamicBar: Fix issues with message notifications
+SystemUI: DynamicBar: Fix timer/stopwatch time mismatch with Clock
+SystemUI: DynamicBar: Show app actions and dismiss on alert card
+SystemUI: DynamicBar: Show Fast Pair artwork and per-bud battery on the dynamic bar
+SystemUI: DynamicBar: Source Clock timer/stopwatch from AOSP chip
+SystemUI: Extend brightness slider haptic toggle for auto brightness button
+SystemUI: Fix bluetooth battery level icon in status bar
+SystemUI: Fix colored icons going blank
+SystemUI: Fix concurrent modification exception on config change
+SystemUI: Fix connectivity callbackhandler regressions
+SystemUI: Fix imageloader spam in BrightnessSliderViewModel
+SystemUI: Fix logspam in NotificationMenuRow
+SystemUI: Fix notification count not working after a reboot
+SystemUI: Fix notification flicker with transluency enabled
+SystemUI: Fix notification transparency issues
+SystemUI: Fix NPE when IMS is not available
+SystemUI: Fix scramble pin layout for A17
+SystemUI: Fix slider haptic issue
+SystemUI: Fix stale colors on power menu after UI mode change
+SystemUI: Fixup applying statusbar extra padding
+SystemUI: Forward-port notification counters
+SystemUI: Implement biometric fallback scramble pin support
+SystemUI: Improve captions button disabled state background in volume dialog
+SystemUI: Inflate QS on orientation change
+SystemUI: Integrate Google Lens into Screenshot UI
+SystemUI: Launch power menu from QS only if enabled
+SystemUI: Move QS data usage queries off the main thread
+SystemUI: Move right logo in statusbar to extreme right
+SystemUI: NetworkNameModel: Fall back to SPN if DATA_SPN is null
+SystemUI: OnTheGo: Update tile more dynamically
+SystemUI: Prevent building empty keyguard indications to avoid potential crashes
+SystemUI: Prevent indicator text cutting off in biometric prompt
+SystemUI: Prevent NotifCollection illegal state on notification dump
+SystemUI: Prevent ShadeListBuilder illegal state on notification dump
+SystemUI: Prevent UDFPS screen flash during sleep transition
+SystemUI: Re-add padding for left custom logo in statusbar
+SystemUI: Refresh system icons on theme change
+SystemUI: Remove existing icon group if its overriding
+SystemUI: Rotate keyguard UDFPS icon with the display
+SystemUI: Skip doze brightness clamp in automatic brightness mode
+SystemUI: SliderHaptics: Tune the primitives
+SystemUI: Update ChatGPT quickaffordance activity
+SystemUI: Use app icons for notifications in statusbar
+SystemUI: Use internal method for systemui restart
+SystemUI: VolumeDialog: Add toggle for haptic feedback [1/2]
+Telecomm: Adapt custom settings to A17
+Telecomm: Add Flashlight blink on incoming calls [2/3]
+telephony: Allow toggle to kill Flash SMS messages [1/2]
+toolbox/modprobe: Select performance for LoadParallelMode based on bootconfig
+Update dependencies in line with Android 17
+Update gradle plugin including required changes
+Upgrade core libraries
+Upgrade koin-android library
+Upgrade protobuf-kotlin-lite and std-jni libraries
+version: Uprev to 12.3
+VolumeHaptics: Tune the primitives
+Wi-Fi timeout feature
+Wifi: Remove random text on ssid
+WifiSettingsConfigStore: Disallow WEP networks by default
+WIP upgrade libraries for QPR2
