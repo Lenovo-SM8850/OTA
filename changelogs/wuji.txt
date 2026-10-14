@@ -1,0 +1,7 @@
+This is Android 17 QPR0 with October 2026 security patches
+
+Notes:
+==============================
+- LineageOS-based source.
+- Always dirty flash at your own risk. If your device bootloops, revert to an older build that boots.
+- Includes Dolby Atmos and Dolby Vision.
