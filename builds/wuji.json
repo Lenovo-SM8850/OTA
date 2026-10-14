@@ -1,0 +1,24 @@
+{
+  "response": [
+    {
+      "maintainer": "miner7222",
+      "currently_maintained": true,
+      "oem": "Lenovo",
+      "device": "Legion Tab 5G (TB324ZC)",
+      "filename": "EvolutionX-17.0-20261014-wuji-12.3-Unofficial.zip",
+      "download": "https://downloads.sourceforge.net/project/lenovo-sm8850/wuji/Evolution%20X/EvolutionX-17.0-20261014-wuji-12.3-Unofficial.zip",
+      "timestamp": 1791980935,
+      "md5": "86216cefa7bb6ef03dfce63e46b5e1ba",
+      "sha256": "8bbb7b26e88672716ab2c12aa942e4d87a83047ba4c7f2409b17dc88379f2832",
+      "size": 4002914920,
+      "version": "12.3",
+      "buildtype": "userdebug",
+      "forum": "",
+      "firmware": "",
+      "paypal": "",
+      "github": "miner7222",
+      "initial_installation_images": [],
+      "extra_images": []
+    }
+  ]
+}
