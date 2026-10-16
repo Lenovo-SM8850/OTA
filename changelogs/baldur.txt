@@ -5,55 +5,49 @@ Notes:
 - LineageOS-based source.
 - Always dirty flash at your own risk. If your device bootloops, revert to an older build that boots.
 - Includes Dolby Atmos and Dolby Vision.
-- If your PIN only unlocks the device after some reboots, remove the screen lock before updating and set it again after the update.
 
 Device changes:
 ==============================
-Add the Notes role and the Notes quick settings tile
-Show stylus settings for paired Lenovo pens
-Show the pen pairing prompt as a heads-up notification
-Map the Lenovo Tab Pen Plus buttons
-Use the standard key layout for the Lenovo keyboard
-Add the FPS tile and the thermal indicator
-Enable the desktop mode developer option
-Apply the factory display calibration for the installed panel
-Fix the correct PIN being rejected and the launcher freezing after some reboots
-Fix the light ring not working when its driver finishes probing late
-Fix the corrupted recovery screen
-Fix touch in recovery
-Fix the recovery brightness control
-sm8850-common: Share the Lenovo Health service
-sm8850-common: Enable the Camera1 maximum ZSL default
+Pen: Reconnect a paired pen when it touches the screen, warn when its battery runs low, detect it right after it connects, add a switch for the refresh rate limit while drawing and enable motion prediction
+Take the Wi-Fi country from nearby access points
+Fix battery status lagging while fast charging
+Fix USB-C dual-port handling
 Update kernel
-Device tree cleanups
 
 Unofficial ROM changes:
 ==============================
-Add Samsung Galaxy Tab S12 Ultra, REDMAGIC Astra 2, iQOO Pad Ultra and OnePlus Pad 3 Pro spoof profiles
-Update the OnePlus 15 spoof profile
-Freeform: Port the DerpFest tablet window engine
-Freeform: Support the keyboard and edge gestures in windows, and remember window sizes
-Freeform: Add a smart clipboard to the sidebar and close the sidebar with Back
-Freeform: Fix crashes and window lifecycle issues
-Freeform: Add Korean, Chinese, Japanese and Russian translations
-Settings: Open carrier settings apps in the right pane
-SystemUI: Translate the per-app volume panel
+Freeform: Add system floating windows that also work outside desktop mode
+Freeform: Open notifications, sidebar apps, Game Space quick start apps and desktop windows as floating windows
+Open notifications in split screen from the notification menu
+Add a desktop mode quick settings tile
+Follow the app's orientation even with auto-rotate on, and remember manual rotation per app
+Allow keeping one split-screen app mostly off screen on large screens
+SystemUI: Use the system contrast level for theme colors
+SystemUI: Fix lock screen stalls while charging
+SystemUI: Fix the battery text keeping a stale tint on the status bar
+AppDataBackup: Follow the system theme and fix dialog layout
+Improve Korean, Japanese, Russian and Chinese translations
 
 Notable ROM changes:
 ==============================
-BatteryService: Cache OEM fast charger config strings
-compat: Adapt Bluetooth audio configurations for V3 callers
-dumpstate: Always include full dmesg in bugreports
-EuiccPolicy: Always enable EUICC packages
-gms: Fully drop PersistentBackgroundServices
-PhoneWindowManager: Consume assist key events
-power-libperfmgr: Fix SessionRecords null deref on ADPF profile switch
-power-libperfmgr: Preserve session state on thread updates
-SystemUI: charging: harden charging ripple cleanup against stale callbacks
-SystemUI: Debounce blur flows
-SystemUI: Fix flow for lockscreen blur
-SystemUI: Fix the layout listener width check for UDFPS icon
-SystemUI: Fix tunable leak for UDFPS custom icon
-SystemUI: Rebuild per-app volume panel in Compose
-SystemUI: Require unlocking to use Wi-Fi and Mobile Data QS tiles
-Update Chromium WebView to 155.0.8059.39
+base: fonts: fix null application NPE and TextView typeface reset
+base: Typeface: don't remap variable-* on the default font
+base: Typeface: Let the Material 3 Expressive fonts follow the selected font
+config: Move freeform_window_management feature to common_mobile
+core: pif: Fix writes to static final Build fields
+Effects: Do not allow DAP_OFFLOAD effect to be suspended
+Evolver: ColorPicker: switch to Skydoves Compose picker
+Evolver: Fix unreadable clock text in light clock chip preview
+Evolver: Pickers: Use SettingsLib expressive dialogs and text styles
+Evolver: resolve string clashes with Settings and polish wording
+extras: sdk: adding ax blur native deps
+extras: sdk: fixing blur performance issues
+extras: sdk: fixing interframe threshold duration
+extras: sdk: fixing multiple blur performance
+extras: Update BCR to Version v3.10
+Settings: network: scan: share pending legacy network query
+Revert "Settings: Only show gesture navigation if device has a software nav bar"
+SystemUI: AxDynamicBar: port keyguard music pill to BlurEngine
+SystemUI: Fix unreadable clock text on light clock chip styles
+SystemUI: Let UDFPS biometric prompt follow the sensor on large screens
+vars: October 2026 Pixel Update
