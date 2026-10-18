@@ -8,46 +8,100 @@ Notes:
 
 Device changes:
 ==============================
-Pen: Reconnect a paired pen when it touches the screen, warn when its battery runs low, detect it right after it connects, add a switch for the refresh rate limit while drawing and enable motion prediction
-Map the Lenovo Tab Pen Pro 2 barrel slides and tail press
-Restore the fingerprint navigation and suspend controls
-Restore the touch gesture control
-Fix the speaker amplifier voltage control stalling across suspend
-Fix USB-C dual-port handling
-Update kernel
+Pen: Send Tab Pen Plus and Tab Pen Pro 2 double clicks to the focused app, clear pairing notifications after connection, and fix pen tap wake
+Fix silent microphone recordings and recorder apps selecting a nonexistent input
+HDR: Tone-map video to the current brightness in fullscreen, floating, mini and Recents windows, including Dolby Vision
+Take the Wi-Fi country from nearby access points when no mobile network country is available
+Enable Smart 5G to use LTE when 5G offers no benefit
 
 Unofficial ROM changes:
 ==============================
-Freeform: Add system floating windows that also work outside desktop mode
-Freeform: Open notifications, sidebar apps, Game Space quick start apps and desktop windows as floating windows
-Open notifications in split screen from the notification menu
-Add a desktop mode quick settings tile
-Follow the app's orientation even with auto-rotate on, and remember manual rotation per app
-Allow keeping one split-screen app mostly off screen on large screens
-SystemUI: Show the always-on display briefly when power is connected
-SystemUI: Use the system contrast level for theme colors
-SystemUI: Fix lock screen stalls while charging
-SystemUI: Fix the battery text keeping a stale tint on the status bar
-AppDataBackup: Follow the system theme and fix dialog layout
-Improve Korean, Japanese, Russian and Chinese translations
+Freeform: Put Close on its own menu row, preserve app proportions, and fix handle touch targets and Home-swipe tidying
+Freeform: Keep floating and mini windows visible without flicker during the Home gesture, preserve rounded corners after Home and unlock, and hide them in Overview
+Freeform: Make Back work over Home and open apps normally after closing a floating window with Back
+Freeform: Show focus with a stronger handle and shadow, and drag windows live from either handle without opening the menu
+Freeform: Smooth window rotation with an app-icon cover and match menu icons to the system icon shape
+Freeform: Keep floating and mini windows from boosting the brightness of the whole display for HDR content
+Freeform: Fix the sidebar panel background, shadow edges and focus highlight
+Game Space: Add a bypass charging tile that follows the focused game and restores charging settings after a crash or reboot
+Game Space: Keep danmaku notifications readable with a dark backing over bright game content
+SystemUI: Add an option to turn off the USB mode picker
+SystemUI: Fix the keyboard switcher icon in the three-button taskbar
+Display: Fix dim HDR content when no extra brightness headroom is available
+Display: Show window blur as enabled by default in Settings and SystemUI
+Improve Korean and Russian translations
 
 Notable ROM changes:
 ==============================
-base: fonts: fix null application NPE and TextView typeface reset
-config: Move freeform_window_management feature to common_mobile
-Effects: Do not allow DAP_OFFLOAD effect to be suspended
-Evolver: ColorPicker: switch to Skydoves Compose picker
-Evolver: Fix unreadable clock text in light clock chip preview
-Evolver: Pickers: Use SettingsLib expressive dialogs and text styles
-Evolver: resolve string clashes with Settings and polish wording
-extras: sdk: adding ax blur native deps
-extras: sdk: fixing blur performance issues
-extras: sdk: fixing interframe threshold duration
-extras: sdk: fixing multiple blur performance
-extras: Update BCR to Version v3.10
-Settings: network: scan: share pending legacy network query
-Revert "Settings: Only show gesture navigation if device has a software nav bar"
-SystemUI: AxDynamicBar: port keyguard music pill to BlurEngine
-SystemUI: Fix unreadable clock text on light clock chip styles
-SystemUI: Let UDFPS biometric prompt follow the sensor on large screens
-vars: October 2026 Pixel Update
+bionic: ifaddrs: don't require inet sockets for name/flag resolution
+fixup! Forward port CM Screen Security settings (1/2)
+KeyPairGenerator: Ensure RSA_OAEP_MGF_DIGEST is always present for KeyMint 3+
+SystemUI: DynamicBar: Use system theme for media output dialog
+SystemUI: Make per-app volume panel surfaces blur-aware
+iconloaderlib: Do not wrap themed icons
+EvoEgg: Use Evolution X logo as app icon
+Evolver: About: only list maintainers with a build in the last 3 months
+Evolver: about: show the whole GitHub avatar instead of zooming in
+Evolver: about: use animated Evolution X logo layout
+Evolver: ColorPicker: switch to Skydoves and unify color preferences
+Evolver: fonts: sort font styles alphabetically in picker
+Evolver: lockscreen: use SettingsLib ButtonPreference for apply-change button
+Evolver: Monet: sync custom seed color with the active theme
+Evolver: spoofing: use tonal ButtonPreference with reset icon for resets
+Partially revert "Settings: Use expressive lottie for face enroll education"
+Revert "Settings: Fix face enroll preview transform in non-natural orientations"
+Settings: Add a posture guidance page for face enrollment
+Settings: Fix resource not found issue in notification settings
+Settings: Give the About phone logo a holographic look
+Settings: hardwareinfo: rebuild Model page as hero + segmented specs
+Settings: Use a SurfaceView for the HAL-owned face preview
+extras: sdk: blur: checkout to crDroid upstream
+SystemUIGoogle: smartspace: port Lunia fixes for decompile regressions
+Updater: Remove the Evolution X version line from device info
+Updater: Use animated Evolution X logo in the top bar
+Updater: Use generic info icon
+Updater: Use Evolution X logo as app icon
+Updater: Report the update status to SystemUpdateManager
+Updater: Show recent changes of the offered update
+Updater: Add a check for updates entry to the overflow menu
+Updater: Show the live update status in the headline
+Updater: Migrate import progress dialog to Jetpack Compose
+Updater: Shorten preferences menu entry
+Updater: Use Pixel loading animation
+Updater: Present updates in the system update screen
+Updater: Add Pixel-style system update screen
+Updater: Clear stale updates before fetching network updates
+Updater: Use SDK level for major upgrade checks
+Updater: Advertise major upgrades as manual-install only
+Updater: Route local update installs through item actions
+Updater: Skip clean up if network updates list is empty
+Updater: Skip clean up for updates without download URL
+Updater: Stream A/B updates by default
+Updater: Make update check button tonal
+Updater: Add note about full install on update items
+Updater: Show Android version and security patch for updates
+Updater: Format security patch without day
+Updater: Show update size label in update items
+Updater: Show year for updates outside current year
+UpdateList: Animate item visibility on expand/collapse
+Updater: Fix crash when attempting to delete update
+Updater: Fix imported update persistence
+Updater: Update ZeroStatePreference strings
+Updater: apply smoothSeconds() to ETA calculation
+Updater: Use ICU and java.time for date and ETA formatting
+Updater: Provide responsive wide screen split layout
+Updater: Open downloads page instead of copying URL
+Updater: Drop welcome and info dialogs
+Updater: Move preferences entry and local update prefs to footer
+Updater: Drop update check result toasts
+Updater: Show install statuses in the scaffold title
+Updater: Force enable expressive SPA theme
+Updater: Clear notification actions on download completion
+Updater: Make refresh unavailable during update check
+Updater: Make download & resume buttons network-aware
+Updater: Enforce single concurrent download
+Updater: Display android security patch in default locale
+Updater: Remove redundant metered network warning checkbox
+Updater: Fix pending reboot state not shown
+Updater: Remove config_hideRecoveryUpdate and "Update recovery" on AB
+Updater: Fix duplicated and truncated date for local updates
