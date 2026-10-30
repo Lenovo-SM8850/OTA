@@ -8,119 +8,72 @@ Notes:
 
 Device changes:
 ==============================
-Setup: Disable the gesture navigation tutorial
-Legion Halo: React to music and games, including audio-driven pulses, with colors taken from the album artwork and the game screen; the reaction no longer goes dark in silent games and recovers after audio capture errors
-Legion Halo: Take priority over the notification and battery lights while an effect shows
-Settings: Explain Legion Halo and video enhancement restrictions in their footers
-Display: Add per-app aspect ratio and fullscreen choices in Settings
-Display: Apply tablet compatibility policies for fixed-orientation apps, letterboxing and split-screen camera use
-Setup: Allow rotation during setup
-Widgets: Allow all widget categories on the hub and show it during wired charging
-Pen: Do not open another note from the pen button while a note-taking app is focused
-Wi-Fi: Allow scanning and the selected roaming policy in ultra-low latency mode
-Storage: Restore storage interrupts after a UFS controller reset
-USB audio: Fail stream requests cleanly when the stream or device is unavailable
-Face unlock: Hide unsupported attention controls
-Cloning: Keep device-control settings apps out of app cloning
-Display: Reserve 30 Hz for the always-on display and offer only 60 Hz or higher for normal use
-Display: Use the panel's calibrated brightness curve for brightness and HDR luminance
-Display: Hide the always-on display brightness slider that the panel does not honor
-Display: Initialize the OLED panel at the first refresh rate switch after boot and avoid turning its power supplies off twice
-Dolby Vision: Feed adjusted brightness back to the panel and restore your color mode after playback
-Carrier profiles: Explain prerequisites and reset exclusions in the settings footers
-OTA: Include the pinned bootloader in full OTAs so both update methods install the same one
-Home: Align the dock with the transient taskbar to avoid a jump at the end of the Home animation
-Google services: Let Android System Intelligence and Play Protect reach Private Compute Services again so Live Caption, speech packs and text classifier updates download
+Games: Apply per-game thermal, CPU and GPU policies, thread placement and performance hints, with frame rate and scene feedback
+Touch: Correct contact reporting, keep recent input frames under load and restore touch and pen settings after a controller reset
+Carrier profiles: Reapply the selected or imported profile after a modem update, waiting until calls have ended and the radio and SIM have settled
+Updates: Show pending system updates in Settings
+Touch: Recover the touch worker in place instead of leaving touch unavailable during a service restart
+Carrier profiles: Allow profile changes while SELinux is permissive
+Carrier profiles: Suggest Carrier settings when automatic profiles are off and the inserted carrier has no built-in modem profile
+Pen: Show the detected pen's product name in its notification
 
 Unofficial ROM changes:
 ==============================
-Legion Halo: Add an in-game Halo toggle to Game Space
-Game Space: Remember bypass charging for each game and keep charging limit controls consistent with the active session
-Game Space: Choose each game's aspect ratio, applied after restarting the game
-Game Space: Scroll danmaku notifications in independent lanes instead of replacing the previous one, using the system font size
-Game Space: Keep expanded controls reachable wherever the game bar is placed
-Game Space: Hide the game bar while the game runs in a floating or mini window without focus, keeping session features such as bypass charging
-Game Space: Remove memory and cache optimization switches that are unsupported
-Game Space: Restore only settings changed by the game session and respect later Do Not Disturb changes
-Game Space: Apply game scaling and intervention resets through the working GameManager interface
-Sidebar: Open the app drawer as an animated sheet above floating windows
-Sidebar: Search the drawer and split picker by app name, ignoring case and accents
-Sidebar: Fill pending split slots from app taps and drawer selections; taps over Home open apps fullscreen
-Sidebar: Use the same drag previews as the taskbar, show the layout a split drop will produce, outline floating drop previews with the window's rounded shape at the previewed size, and open a floating window when the split slot cannot take another app
-Drag and drop: Cancel the drag when an app is dropped back onto the taskbar or the sidebar, and keep the sidebar open as a drop target
-Sidebar: Keep image-drop access until the image is copied
-Split screen: Use three equal columns in landscape and keep 1+2 or 2+1 grouping through rotation, layout toggles and Recents
-Split screen: Add a third app beside a 1+1 split from its handle menu, or by dragging an app into it to make three columns
-Split screen: Swap visible apps with Replace and give each row of a four-app split its own swap handle
-Split screen: Drop an app from the taskbar onto a pane of a three- or four-app split to replace that app
-Split screen: New window adds a pane to the split (two apps become three, three become four) and opens a floating window when four apps are shown
-Split screen: Keep the other panes when choosing a window from Manage windows
-Split screen: Keyboard shortcuts and notification split actions work with floating windows and three- or four-app splits
-Split screen: Keep the remaining split apps together when one is moved to a floating window
-Split screen: Hide dividers with Recents and restore a saved group only from its group card
-Floating windows: Resize into display ratio, 4:3, 1:1 or original ratio presets by dragging a corner straight; a diagonal drag only resizes
-Floating windows: Fling a window toward a corner and release it to turn it into a mini window; dragging it slowly into a corner still works
-Floating windows: Limit a focused floating window to 60 fps while a fullscreen game runs below it
-Desktop mode: Move open floating windows into the desktop when a desktop session starts
-Floating windows: Animate launches and minimize transitions, opening at the previewed size
-Floating windows: Restore handle padding correctly after a press and hover exit
-Floating windows: Stay floating when the screen turns off to the always-on display
-Mini windows: Stop hiding each other after being revealed or dragged
-Multitasking: Share a five-window limit across split, floating and mini windows
-Display: Confine landscape cutout suppression to the built-in display
-Settings: Tint all three-button navigation preview icons consistently
-Settings: Keep the navigation bar keyboard switcher hidden when its option is off
-Settings: Group custom always-on display controls together, use consistent labels and disable the sub-options while the always-on display is off
-Rotation: Keep an app's requested orientation when another app shows a non-fullscreen dialog over it
-Rotation: Clear the remembered orientation of an app when the floating rotation button returns it to its default orientation
-Dynamic Island: Take touches only on the visible card and where it covers the app handle, theme the blur popup content, keep the media seek bar steady, and dismiss popups by swiping sideways or when they open an app
-Material 3: Polish the sidebar drawer and search, split app picker, window control icons and a desktop mode tile icon
-Dolby Atmos: Recognize supported Atmos streams in MP4 files
-Evolver: Pair saved spoof profiles with the correct labels and refresh the tablet profiles
-Evolver: Show sharp boot animation previews with the animation's real colors
-Evolver: Make Smartspace weather and battery bar controls use the settings SystemUI reads
-Clipboard: Keep captured images from being deleted or duplicated by concurrent cleanup
-USB: Cancel stale automatic USB dialogs after disconnect and recheck lock and doze state before showing them
-Translations: Update Korean, Japanese, Russian, Simplified Chinese and Traditional Chinese
+Display: Avoid a crash when a brightness request reaches a display that is no longer available
+Game Space: Keep scrolling notifications readable over changing game backgrounds
+Game Space: Restore brightness and gesture settings to the game session's user after switching users
+Game Space: Keep Performance mode at full resolution and reserve resolution reduction for Battery mode, including previously added games
+Game Space: Apply a game's mode when it is selected in settings or the game panel
+Game Space: Change a running game's window ratio from a list and swipe twice across its black bars to move it between the center and bottom
+Game Space: Add optional background-app cleanup when a game starts
+Game Space: Hide the game bar, panel and overlays when the game leaves the screen while keeping the session grace period
+Sidebar: Close the app drawer when it leaves the screen
+Always-on display: Allow the charging option to be used independently of the main always-on display switch
+Settings: Avoid a crash when a window is too short to draw its scrollbar
+Floating windows: Restore visible windows after opening another app from Recents
+Game Space: Restore charging settings correctly after bypass charging when no charging limit was previously set
+Dynamic Island: Keep app icons at icon size when album artwork is unavailable
+Mini windows: Fling mini windows between corners and make slow corner drags work for large floating windows
+Status bar: Keep the background at the normal bar height when Dynamic Island extends below it
+Lyrics: Share playback timing between the status bar and media popup, correct timing offsets when possible, keep untimed lyrics in the popup and hide missing lyrics
+Game Space: Use the selected language for the Smart Pixels tile
+Dynamic Island: Expand and collapse popups as a continuous morph of the island
+Dynamic Island: Switch audio output from the media popup and scroll long titles, artist names and app names
+Floating windows: Resize a window by pinching its top and bottom handles
+Translations: Cover the new controls in Korean, Japanese, Russian, Simplified Chinese and Traditional Chinese
 
 Notable ROM changes:
 ==============================
-SystemUI: Introduce Dynamic Island [1/2]
-SystemUI: Allow to toggle Dynamic Island features [1/2]
-SystemUI: Add Dynamic Island lyrics support
-SystemUI: DynamicIsland: Allow adjust height and width [1/2]
-SystemUI: DynamicIsland: Add popup menu bg style [1/2]
-SystemUI: DynamicIsland: Open media app on long-press
-SystemUI: DynamicIsland: Add haptic feedback on chip click
-SystemUI: DynamicIsland: Add haptic feedback to media popup control buttons
-SystemUI: Implement 3D Spatial Effect for Depth Wallpaper
-SystemUI: Add Triple tap to launch freeform [1/2]
-Evolver: lockscreen: add Now Playing saved songs list with album art
-tuner: Refresh status bar icons and apply theme tint
-Evolver: Update keybox repo URL
-extras: Drop SansSerifPro Font
-extras: Drop NothingDotHeadline font
-Keep the Sensors permission for custom sensors without a permission
-WiredAccessoryManager: Use extcon when no legacy switch exists
-InputConsumer: Add empty check before erasing mBatches
-InputConsumer: Store it early and return OK status when failed
-InputConsumer: Check consume time before sending finished signal
-Settings: Don't show 6GHz option for hotspot if unsupported
-LineageParts: Add a cycle ringer mode button action
-LineageParts: Use the configured assist short/long press action
-RingtoneManager: Honor the SIM slot ringtone for incoming calls
-Settings: Fix per-SIM ringtone availability with eSIM / empty slots
-base: fonts: Add system-wide custom font support
-base: fonts: Do not override lockscreen clock with custom font
-base: fonts: Keep selected font in apps that bundle Google Sans
-core: Update shade panel colors
-SystemUI: Add glass and tinted shade color styles
-SystemUI: qs: Add a new Quick Settings panel style
-SystemUI: Fix and harden QS header image providers
-SystemUI: Simplify wallpaper loading by removing dimming overlay
-core: spoof: Port TrickyStore, PIF and canary fetch fixes
-Evolver: PIF/TrickyStore: per-device initial SDK, wipe prompt after keybox import
-Evolver: spoofing: Validate imports and fix TrickyStore target counts
-Settings: Remove orphaned window blurs developer option
-extras: Remove google sans flex font package which is default
-extras: Unify nothingdot font overlays
+dolby: Switch to compact navbar design
+Evolver: Allow disabling clipboard overlay [3/3]
+WapPush: validate WSP header length before allocation
+lineage-sdk: LiveDisplay: Don't let HAL failures crash system_server
+lineage-sdk: Harden LineageHardwareManager against HAL errors
+WindowManagerService: fix vulnerability from PID and UID parameter mixup
+SystemUI: fix an upstream use-after-free bug in PipTouchHandler
+delay activation of the Allow button in USB ADB confirmation dialog
+Remove build fingerprint from screenshot EXIF
+always set deprecated Build.SERIAL to UNKNOWN
+fix restored file mtime being set in seconds instead of milliseconds
+base: Fix SIM2 ringtone resolving to SIM1 ringtone
+SystemUI: DynamicBar: Fix keyguard media panel overflow and art gap
+core: fonts: Drop double weight adjustment
+SystemUI: Lockscreen: keep Now Playing above the indication area
+SystemUI: Add X/Y offset for dynamic island [1/2]
+SystemUI: QS: ColorOS: rework the panel to match real ColorOS
+SystemUI: QS: Animate the ColorOS ringer switch
+SystemUI: QS: Light the ColorOS media card with the album art
+Evolver: QS: Show the ColorOS options for the ColorOS panel style
+Evolver: Fix preview of OOS clock 2
+SystemUI: Implement double tap to sleep for Pixel Launcher
+reject updates with serialno constraints
+Don't show serial number in recovery
+disable CLOSE_QUIC_CONNECTION power optimization that bypasses VPN
+CtSignatureVerifier: fix TOCTOU issue when handling downloaded files
+CtSignatureVerifier: add missing null check to setPublicKeyFrom()
+disable unprivileged hardware keepalives
+delay activation of Allow button(s) in runtime permission dialog
+don't enable the "send DHCP hostname" option by default
+fix multi-user handling bug in WifiService package state listener
+make persist.adb.tls_server.enable system property non-persistent
+SystemUIGoogle: ambientmusic: nonpixel: don't auto-listen in on-demand mode
