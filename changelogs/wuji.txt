@@ -8,72 +8,85 @@ Notes:
 
 Device changes:
 ==============================
-Games: Apply per-game thermal, CPU and GPU policies, thread placement and performance hints, with frame rate and scene feedback
-Touch: Correct contact reporting, keep recent input frames under load and restore touch and pen settings after a controller reset
-Carrier profiles: Reapply the selected or imported profile after a modem update, waiting until calls have ended and the radio and SIM have settled
-Updates: Show pending system updates in Settings
-Touch: Recover the touch worker in place instead of leaving touch unavailable during a service restart
-Carrier profiles: Allow profile changes while SELinux is permissive
-Carrier profiles: Suggest Carrier settings when automatic profiles are off and the inserted carrier has no built-in modem profile
-Pen: Show the detected pen's product name in its notification
+GameTuning: Add Game Tuning, an app for per-game CPU, GPU, frame rate, temperature and graphics tuning
+Display: Change brightness at speeds tuned to the panel, with gradual automatic dimming
+LegionHalo: Pick colors from a draggable grid and fit color dialogs in landscape
+VideoMotion: List enabled apps first and keep search results above the keyboard
+McfgLoader: Group overrides with a SIM selector and fit status and value dialogs in landscape
 
 Unofficial ROM changes:
 ==============================
-Display: Avoid a crash when a brightness request reaches a display that is no longer available
-Game Space: Keep scrolling notifications readable over changing game backgrounds
-Game Space: Restore brightness and gesture settings to the game session's user after switching users
-Game Space: Keep Performance mode at full resolution and reserve resolution reduction for Battery mode, including previously added games
-Game Space: Apply a game's mode when it is selected in settings or the game panel
-Game Space: Change a running game's window ratio from a list and swipe twice across its black bars to move it between the center and bottom
-Game Space: Add optional background-app cleanup when a game starts
-Game Space: Hide the game bar, panel and overlays when the game leaves the screen while keeping the session grace period
-Sidebar: Close the app drawer when it leaves the screen
-Always-on display: Allow the charging option to be used independently of the main always-on display switch
-Settings: Avoid a crash when a window is too short to draw its scrollbar
-Floating windows: Restore visible windows after opening another app from Recents
-Game Space: Restore charging settings correctly after bypass charging when no charging limit was previously set
-Dynamic Island: Keep app icons at icon size when album artwork is unavailable
-Mini windows: Fling mini windows between corners and make slow corner drags work for large floating windows
-Status bar: Keep the background at the normal bar height when Dynamic Island extends below it
-Lyrics: Share playback timing between the status bar and media popup, correct timing offsets when possible, keep untimed lyrics in the popup and hide missing lyrics
-Game Space: Use the selected language for the Smart Pixels tile
-Dynamic Island: Expand and collapse popups as a continuous morph of the island
-Dynamic Island: Switch audio output from the media popup and scroll long titles, artist names and app names
-Floating windows: Resize a window by pinching its top and bottom handles
+GameSpace: Launch games from a library, optionally hide them from Home and save per-game session options
+GameSpace: Refresh the app icon
+GameSpace: Add a configurable dashboard with a tile editor, compact game bar and startup status pill, and edit per-game options and performance presets inside it
+GameSpace: Add a None mode that leaves a game to the system, low-latency Wi-Fi, high touch sampling and per-game sidebar hiding
+GameSpace: Pause session settings while the game is away and disable window blur during play
+GameSpace: End a game's session when it is removed from Recents, and stop session settings such as Do not disturb from reverting mid-game
+GameSpace: Move the stats overlay independently and double-tap it for a compact view
+GameSpace: Require a second swipe to confirm system gestures while gesture lock is on
+Shell: FloatingWindows: Pinch to resize from anywhere with tilt feedback and drag floating and mini windows to a bottom target to dismiss them
+Shell: FloatingWindows: Keep new windows opened from a floating app floating and focus an app tapped behind a floating window
+Shell: FloatingWindows: Place minimized handles freely, with edge snapping and overlap avoidance
+Shell: FloatingWindows: Match window backgrounds to the app and keep handles at a steady size
+Shell: MiniWindows: Make corner flings easier to trigger
+Shell: WindowControls: Add minimize and close actions, minimize fullscreen and split apps to edge handles and drag handles into a split-screen selection
+Shell: SplitScreen: Let fixed-orientation apps fill the panes, with a per-game option to keep their ratio
+Shell: Taskbar: Keep split-screen drop targets above the app drawer
+Shell: AppHandle: Add hidden and transparent options
+Evolver: Gestures: Choose a status bar triple-tap action and assign floating windows to gesture actions
+Evolver: Gestures: Make actions match their labels and let split-screen shortcuts use the focused fullscreen app
+Rotation: Stop endless screen rotation and SystemUI stalls when a per-app rotation is set for an app that splits its layout in landscape, such as Settings
+Rotation: Keep an app's orientation while opening Recents from it, so Overview no longer shows empty tasks
+SystemUI: DynamicIsland: Page through stacked popups vertically, swipe sideways to dismiss an item without affecting playback and use a compact media card with custom actions
+SystemUI: DynamicIsland: Hide media while its app is on screen and respond to touches across the whole island
+SystemUI: DynamicIsland: Show MetricStyle timers and stopwatches, including overtime
+SystemUI: DynamicIsland: Stay at the top in landscape by default, with optional side-camera docking
+SystemUI: DynamicIsland: Keep the collapsed width steady with compact times and circular artwork
+SystemUI: DynamicIslandLyrics: Prefer lyrics in the system language, then the track language, and match tracks by title, artist and length
+SystemUI: ColorOS QS: Fit tile labels and state text independently of chevrons and keep them readable at larger font sizes
+Sidebar: Keep the handle excluded from the Back gesture after it is moved or resized
+Updater: Keep install controls and reboot status working after the updater restarts
+Updater: Hide an already installed local OTA from the list, even offline
+Dolby: Show the status icon for E-AC3 JOC streams while they play
+Settings: Describe touch polling as a sampling rate
 Translations: Cover the new controls in Korean, Japanese, Russian, Simplified Chinese and Traditional Chinese
 
 Notable ROM changes:
 ==============================
-dolby: Switch to compact navbar design
-Evolver: Allow disabling clipboard overlay [3/3]
-WapPush: validate WSP header length before allocation
-lineage-sdk: LiveDisplay: Don't let HAL failures crash system_server
-lineage-sdk: Harden LineageHardwareManager against HAL errors
-WindowManagerService: fix vulnerability from PID and UID parameter mixup
-SystemUI: fix an upstream use-after-free bug in PipTouchHandler
-delay activation of the Allow button in USB ADB confirmation dialog
-Remove build fingerprint from screenshot EXIF
-always set deprecated Build.SERIAL to UNKNOWN
-fix restored file mtime being set in seconds instead of milliseconds
-base: Fix SIM2 ringtone resolving to SIM1 ringtone
-SystemUI: DynamicBar: Fix keyguard media panel overflow and art gap
-core: fonts: Drop double weight adjustment
-SystemUI: Lockscreen: keep Now Playing above the indication area
-SystemUI: Add X/Y offset for dynamic island [1/2]
-SystemUI: QS: ColorOS: rework the panel to match real ColorOS
-SystemUI: QS: Animate the ColorOS ringer switch
-SystemUI: QS: Light the ColorOS media card with the album art
-Evolver: QS: Show the ColorOS options for the ColorOS panel style
-Evolver: Fix preview of OOS clock 2
-SystemUI: Implement double tap to sleep for Pixel Launcher
-reject updates with serialno constraints
-Don't show serial number in recovery
-disable CLOSE_QUIC_CONNECTION power optimization that bypasses VPN
-CtSignatureVerifier: fix TOCTOU issue when handling downloaded files
-CtSignatureVerifier: add missing null check to setPublicKeyFrom()
-disable unprivileged hardware keepalives
-delay activation of Allow button(s) in runtime permission dialog
-don't enable the "send DHCP hostname" option by default
-fix multi-user handling bug in WifiService package state listener
-make persist.adb.tls_server.enable system property non-persistent
-SystemUIGoogle: ambientmusic: nonpixel: don't auto-listen in on-demand mode
+SystemUI: ColorOS QS: Rework the layout, glass, media card and editor
+renderengine: Draw blur regions as Liquid Glass
+SystemUI: QS: Switch header icons dark on light header images
+SystemUI: Add case to quick pull down status bar anywhere
+SystemUI: NetworkTraffic: Request explicit bold weight and re-apply on config change
+SystemUI: ShadeHeader: Update the network traffic color with the theme
+SystemUI: DynamicBar: Fix notification text extras
+SystemUI: DynamicBar: Fix media notification overlap in split keyguard screen
+SystemUI: DynamicIsland: Dock to a side camera when rotated
+SystemUI: DynamicIsland: Polish popups with press, accents and motion
+SystemUI: DynamicIsland: Hide Dynamic Island while QS is expanding or open
+SystemUI: DynamicIsland: Add a charging chip
+SystemUI: DynamicIsland: Show connected Bluetooth devices
+SystemUI: DynamicIsland: Show earbud charging state
+SystemUI: DynamicIsland: Show hotspot and VPN events
+SystemUI: DynamicIsland: Show calls
+SystemUI: DynamicIsland: Swipe the island away
+Evolver: DynamicIsland: Add switches for system events
+Evolver: DynamicIsland: Add a switch to keep the island on top in landscape
+SystemUI: DynamicIslandLyrics: match lyrics by exact track and length
+SystemUI: dt2s: ignore touches on windows drawn over the launcher
+AppDataBackup: Adapt Material 3 Expressive UI and animations
+SystemUI: Keyguard: Rebuild weather sections when weather source changes
+dolby: Fix floating navbar width
+trickystore: Fix patch level template and date handling
+trickystore: Harden keybox parsing
+trickystore: Keep the loaded keyboxes when none is usable
+spoof: Don't auto-target new apps while TrickyStore is off
+core: trickystore: Add MODULE_HASH support for KeyMint v4+ attestation
+core: trickystore: Align attestation version with KeyMint HAL
+core: trickystore: Replace zeroed boot key with generated key
+core: trickystore: Treat zeroed boot hash as missing
+Evolver: TrickyStore: Show what a patch date template resolves to
+Evolver: TrickyStore: Add Deselect unnecessary to the app picker
+Evolver: TrickyStore: Accept JSON and check keys in patch levels
+Don't wake up when power manager stops a dozing dream
+imsphone: Clean up tracked calls after IMS setup failure
