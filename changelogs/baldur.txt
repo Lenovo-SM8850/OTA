@@ -1,4 +1,4 @@
-This is Android 17 QPR0 with October 2026 security patches
+This is Android 17 QPR0 with November 2026 security patches
 
 Notes:
 ==============================
@@ -8,83 +8,77 @@ Notes:
 
 Device changes:
 ==============================
-GameTuning: Add Game Tuning, an app for per-game CPU, GPU, frame rate, temperature and graphics tuning
-Display: Change brightness at speeds tuned to the panel, with gradual automatic dimming
-LegionHalo: Pick colors from a draggable grid and fit color dialogs in landscape
-VideoMotion: List enabled apps first and keep search results above the keyboard
-Home: Keep the dock steady after portrait Home gestures and use smaller workspace and dock icons
+GameTuning: Rename the app to Game Tuner
 
 Unofficial ROM changes:
 ==============================
-GameSpace: Launch games from a library, optionally hide them from Home and save per-game session options
-GameSpace: Refresh the app icon
-GameSpace: Add a configurable dashboard with a tile editor, compact game bar and startup status pill, and edit per-game options and performance presets inside it
-GameSpace: Add a None mode that leaves a game to the system, low-latency Wi-Fi, high touch sampling and per-game sidebar hiding
-GameSpace: Pause session settings while the game is away and disable window blur during play
-GameSpace: End a game's session when it is removed from Recents, and stop session settings such as Do not disturb from reverting mid-game
-GameSpace: Move the stats overlay independently and double-tap it for a compact view
-GameSpace: Require a second swipe to confirm system gestures while gesture lock is on
-Shell: FloatingWindows: Pinch to resize from anywhere with tilt feedback and drag floating and mini windows to a bottom target to dismiss them
-Shell: FloatingWindows: Keep new windows opened from a floating app floating and focus an app tapped behind a floating window
-Shell: FloatingWindows: Place minimized handles freely, with edge snapping and overlap avoidance
-Shell: FloatingWindows: Match window backgrounds to the app and keep handles at a steady size
-Shell: MiniWindows: Make corner flings easier to trigger
-Shell: WindowControls: Add minimize and close actions, minimize fullscreen and split apps to edge handles and drag handles into a split-screen selection
-Shell: SplitScreen: Let fixed-orientation apps fill the panes, with a per-game option to keep their ratio
-Shell: Taskbar: Keep split-screen drop targets above the app drawer
-Shell: AppHandle: Add hidden and transparent options
-Evolver: Gestures: Choose a status bar triple-tap action and assign floating windows to gesture actions
-Evolver: Gestures: Make actions match their labels and let split-screen shortcuts use the focused fullscreen app
-Rotation: Stop endless screen rotation and SystemUI stalls when a per-app rotation is set for an app that splits its layout in landscape, such as Settings
-Rotation: Keep an app's orientation while opening Recents from it, so Overview no longer shows empty tasks
-SystemUI: DynamicIsland: Page through stacked popups vertically, swipe sideways to dismiss an item without affecting playback and use a compact media card with custom actions
-SystemUI: DynamicIsland: Hide media while its app is on screen and respond to touches across the whole island
-SystemUI: DynamicIsland: Show MetricStyle timers and stopwatches, including overtime
-SystemUI: DynamicIsland: Stay at the top in landscape by default, with optional side-camera docking
-SystemUI: DynamicIsland: Keep the collapsed width steady with compact times and circular artwork
-SystemUI: DynamicIslandLyrics: Prefer lyrics in the system language, then the track language, and match tracks by title, artist and length
-SystemUI: ColorOS QS: Fit tile labels and state text independently of chevrons and keep them readable at larger font sizes
-Sidebar: Keep the handle excluded from the Back gesture after it is moved or resized
-Updater: Keep install controls and reboot status working after the updater restarts
-Updater: Hide an already installed local OTA from the list, even offline
-Dolby: Show the status icon for E-AC3 JOC streams while they play
-Settings: Describe touch polling as a sampling rate
+GameSpace: Add an option to hide the handle after 3 seconds and bring it back with an edge swipe
+GameSpace: Stop the stats overlay from opening the dashboard when tapped
+GameSpace: Open the dashboard in place, show the More tiles below the More row and close the status pill after 1.5 seconds
+Evolver: Spoofing: Spoof Netflix with a device profile by default and add a Netflix switch to the spoofing hub
+Dolby: Stop Dolby Vision video from flashing wrong colors after a seek
+SystemUI: ColorOS QS: Lay tablets out on six tile-wide columns with My Devices in the top row and a larger media card
+SystemUI: ColorOS QS: Start screen recording from its tile and open more from a tile's chevron
+SystemUI: ColorOS QS: Keep long Wi-Fi names on one line and scroll them
+SystemUI: QS: Wrap long tile labels between words
+SystemUI: Media: Stop the QS media card from staying empty after it moves between hosts
+SystemUI: DynamicIsland: Keep apps clear of the status bar after rotation
+SystemUI: DynamicIsland: Size the island from the same base height with or without a camera
+SystemUI: DynamicIsland: Let popups settle fully instead of jumping on the last frame
+SystemUI: DynamicIsland: Stop popups from resizing or tinting the media card's icons
+SystemUI: DynamicIslandLyrics: Scroll status bar lyrics to the end beside the island
+Translations: Reword Desktop windowing in Korean, Simplified Chinese and Traditional Chinese and use the AOSP ringer labels in all five languages
 Translations: Cover the new controls in Korean, Japanese, Russian, Simplified Chinese and Traditional Chinese
 
 Notable ROM changes:
 ==============================
-SystemUI: ColorOS QS: Rework the layout, glass, media card and editor
-renderengine: Draw blur regions as Liquid Glass
-SystemUI: QS: Switch header icons dark on light header images
-SystemUI: Add case to quick pull down status bar anywhere
-SystemUI: NetworkTraffic: Request explicit bold weight and re-apply on config change
-SystemUI: ShadeHeader: Update the network traffic color with the theme
-SystemUI: DynamicBar: Fix notification text extras
-SystemUI: DynamicBar: Fix media notification overlap in split keyguard screen
-SystemUI: DynamicIsland: Dock to a side camera when rotated
-SystemUI: DynamicIsland: Polish popups with press, accents and motion
-SystemUI: DynamicIsland: Hide Dynamic Island while QS is expanding or open
-SystemUI: DynamicIsland: Add a charging chip
-SystemUI: DynamicIsland: Show connected Bluetooth devices
-SystemUI: DynamicIsland: Show earbud charging state
-SystemUI: DynamicIsland: Show hotspot and VPN events
-SystemUI: DynamicIsland: Show calls
-SystemUI: DynamicIsland: Swipe the island away
-Evolver: DynamicIsland: Add switches for system events
-Evolver: DynamicIsland: Add a switch to keep the island on top in landscape
-SystemUI: DynamicIslandLyrics: match lyrics by exact track and length
-SystemUI: dt2s: ignore touches on windows drawn over the launcher
-AppDataBackup: Adapt Material 3 Expressive UI and animations
-SystemUI: Keyguard: Rebuild weather sections when weather source changes
-dolby: Fix floating navbar width
-trickystore: Fix patch level template and date handling
-trickystore: Harden keybox parsing
-trickystore: Keep the loaded keyboxes when none is usable
-spoof: Don't auto-target new apps while TrickyStore is off
-core: trickystore: Add MODULE_HASH support for KeyMint v4+ attestation
-core: trickystore: Align attestation version with KeyMint HAL
-core: trickystore: Replace zeroed boot key with generated key
-core: trickystore: Treat zeroed boot hash as missing
-Evolver: TrickyStore: Show what a patch date template resolves to
-Evolver: TrickyStore: Add Deselect unnecessary to the app picker
-Evolver: TrickyStore: Accept JSON and check keys in patch levels
+SystemUI: ColorOS QS: Implement native tile editor with drag-and-drop
+SystemUI: ColorOS QS: Let the pinned slots be edited
+SystemUI: ColorOS QS: Add My Devices next to the ringer
+SystemUI: ColorOS QS: Color the light ringer bubble by mode
+SystemUI: ColorOS: Add light glass rim and highlight without blur
+SystemUI: ColorOS QS: Always use the clear shade scrim
+Evolver: Themes: Lock the shade style with the ColorOS QS panel
+SystemUI: Introduce NothingOS style Quick Settings
+SystemUI: QS: Add NothingOS grid sliders, leave other styles alone
+SystemUI: Show per-device battery in NothingOS style Bluetooth tile
+Evolver: QuickSettings: Add NothingOS to the QS panel styles
+SystemUI: volume: appvolume: Use flat slider rows like the main panel
+SystemUI: Fix volume panel not showing in legacy keyguard mode
+SystemUI: dt2s: Wait for the launcher to open an app before sleeping
+SystemUI: DynamicIsland: Add a ColorOS style setting
+Evolver: DynamicIsland: Add a ColorOS style switch
+SystemUI: DynamicIsland: Grow the island out of the camera hole as ColorOS does
+SystemUI: DynamicIsland: Match the ColorOS card open and close motion
+SystemUI: DynamicIsland: Close the blur popup in place with the ColorOS style
+SystemUI: DynamicIsland: Use ColorOS glass cards for live popups
+SystemUI: DynamicIsland: Show apps' live updates in the island
+Evolver: DynamicIsland: Add the live updates switch
+SystemUI: DynamicIsland: Show the app's own actions on live updates
+SystemUI: DynamicIsland: Use the app's colour and unknown progress on live updates
+SystemUI: DynamicIsland: Hide the stock chips for live updates
+SystemUI: DynamicIsland: Keep timers out of the alarm chip
+SystemUI: DynamicIsland: Toggle media playback from the live state
+SystemUI: DynamicIsland: Centre popups on the drawn capsule
+SystemUI: DynamicIsland: Follow the camera cutout after rotation
+SystemUI: DynamicIsland: Make the side edge window a trusted overlay
+SystemUI: Fix Dynamic Island and Control Center collapse in landscape mode
+SystemUI: DynamicBar: Ignore torch events while a call is ringing
+UiModeManagerService: Gate battery saver dark theme on a setting
+Settings: Add battery saver dark theme toggle to dark theme screen
+base: Add Duck RKP V1 provisioning with TrickyStore integration [1/2]
+Evolver: Add Duck RKP V1 provisioning with TrickyStore integration
+base: Automatically generate and renew Duck RKP keyboxes
+base: Fall back to the native Duck RKP service
+base: rkp: Only treat user-imported keyboxes as blocking Duck RKP
+Evolver: Show automatic Duck RKP provisioning status
+Evolver: Show native Duck RKP provisioning errors
+Evolver: TrickyStore: Hide device RKP on unsupported devices
+core: trickystore: Derive attestation version from spoofed first API level
+core: trickystore: Emit legacy Keymaster encoding when HAL version is unknown
+core: trickystore: Harden software-attestation eligibility and leaf serial
+core: trickystore: Fix spoof on binder chain probe
+core: pif: Keep the numeric release when the fingerprint says CANARY
+expose AOSP adaptive Wi-Fi connectivity setting
+don't enable "send device name" option by default for new Wi-Fi networks
+extras: Drop SansSerif Fonts
