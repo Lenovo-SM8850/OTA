@@ -8,77 +8,63 @@ Notes:
 
 Device changes:
 ==============================
-GameTuning: Rename the app to Game Tuner
+ViPER4Android: Add the ViPER4Android audio effects app
+Firmware: Update the stock base to ZUXOS 2.5.10.019
+GameTuning: Run frame interpolation and super resolution for games
+GameTuning: Select the graphics driver per game
+Pen: Add a writing vibration page with strength levels, on by default
+Battery: Charge to 100% when charging control is off
 
 Unofficial ROM changes:
 ==============================
-GameSpace: Add an option to hide the handle after 3 seconds and bring it back with an edge swipe
-GameSpace: Stop the stats overlay from opening the dashboard when tapped
-GameSpace: Open the dashboard in place, show the More tiles below the More row and close the status pill after 1.5 seconds
-Evolver: Spoofing: Spoof Netflix with a device profile by default and add a Netflix switch to the spoofing hub
-Dolby: Stop Dolby Vision video from flashing wrong colors after a seek
-SystemUI: ColorOS QS: Lay tablets out on six tile-wide columns with My Devices in the top row and a larger media card
-SystemUI: ColorOS QS: Start screen recording from its tile and open more from a tile's chevron
-SystemUI: ColorOS QS: Keep long Wi-Fi names on one line and scroll them
-SystemUI: QS: Wrap long tile labels between words
-SystemUI: Media: Stop the QS media card from staying empty after it moves between hosts
-SystemUI: DynamicIsland: Keep apps clear of the status bar after rotation
-SystemUI: DynamicIsland: Size the island from the same base height with or without a camera
-SystemUI: DynamicIsland: Let popups settle fully instead of jumping on the last frame
-SystemUI: DynamicIsland: Stop popups from resizing or tinting the media card's icons
-SystemUI: DynamicIslandLyrics: Scroll status bar lyrics to the end beside the island
-Translations: Reword Desktop windowing in Korean, Simplified Chinese and Traditional Chinese and use the AOSP ringer labels in all five languages
-Translations: Cover the new controls in Korean, Japanese, Russian, Simplified Chinese and Traditional Chinese
+GameSpace: Add frame interpolation, super resolution, touch sensitivity and pen tiles
+GameSpace: Save in-game option changes per game
+GameSpace: Choose and reorder the performance overlay items and snap it to the top centre
+SystemUI: ColorOS QS: Lay tablets out on four centred tile columns
+SystemUI: ColorOS QS: Edit the panel items in the tile editor
+SystemUI: ColorOS QS: Toggle automatic brightness from its glyph
+SystemUI: QS: Shrink the Nothing tiles on tablets
+SystemUI: DynamicIsland: Expand stacked popups into a list of cards from the page dots in the ColorOS style and show the last used card once the island collapses
+SystemUI: DynamicIsland: Dismiss alarms from the popup
+SystemUI: DynamicIsland: Close the popup on the home gesture
+SystemUI: DynamicIsland: Close the open popup when the island style changes
+SystemUI: DynamicIsland: Stop the ColorOS island from staying empty and untappable, or its content blurred or pushed out, after rotating during its animation
+SystemUI: dt2s: Stop the double tap that wakes the device from the always-on display from putting it back to sleep
+SystemUI: QS: Stop SystemUI from being killed after several rotations
 
 Notable ROM changes:
 ==============================
-SystemUI: ColorOS QS: Implement native tile editor with drag-and-drop
-SystemUI: ColorOS QS: Let the pinned slots be edited
-SystemUI: ColorOS QS: Add My Devices next to the ringer
-SystemUI: ColorOS QS: Color the light ringer bubble by mode
-SystemUI: ColorOS: Add light glass rim and highlight without blur
-SystemUI: ColorOS QS: Always use the clear shade scrim
-Evolver: Themes: Lock the shade style with the ColorOS QS panel
-SystemUI: Introduce NothingOS style Quick Settings
-SystemUI: QS: Add NothingOS grid sliders, leave other styles alone
-SystemUI: Show per-device battery in NothingOS style Bluetooth tile
-Evolver: QuickSettings: Add NothingOS to the QS panel styles
-SystemUI: volume: appvolume: Use flat slider rows like the main panel
-SystemUI: Fix volume panel not showing in legacy keyguard mode
-SystemUI: dt2s: Wait for the launcher to open an app before sleeping
-SystemUI: DynamicIsland: Add a ColorOS style setting
-Evolver: DynamicIsland: Add a ColorOS style switch
-SystemUI: DynamicIsland: Grow the island out of the camera hole as ColorOS does
-SystemUI: DynamicIsland: Match the ColorOS card open and close motion
-SystemUI: DynamicIsland: Close the blur popup in place with the ColorOS style
-SystemUI: DynamicIsland: Use ColorOS glass cards for live popups
-SystemUI: DynamicIsland: Show apps' live updates in the island
-Evolver: DynamicIsland: Add the live updates switch
-SystemUI: DynamicIsland: Show the app's own actions on live updates
-SystemUI: DynamicIsland: Use the app's colour and unknown progress on live updates
-SystemUI: DynamicIsland: Hide the stock chips for live updates
-SystemUI: DynamicIsland: Keep timers out of the alarm chip
-SystemUI: DynamicIsland: Toggle media playback from the live state
-SystemUI: DynamicIsland: Centre popups on the drawn capsule
-SystemUI: DynamicIsland: Follow the camera cutout after rotation
-SystemUI: DynamicIsland: Make the side edge window a trusted overlay
-SystemUI: Fix Dynamic Island and Control Center collapse in landscape mode
-SystemUI: DynamicBar: Ignore torch events while a call is ringing
-UiModeManagerService: Gate battery saver dark theme on a setting
-Settings: Add battery saver dark theme toggle to dark theme screen
-base: Add Duck RKP V1 provisioning with TrickyStore integration [1/2]
-Evolver: Add Duck RKP V1 provisioning with TrickyStore integration
-base: Automatically generate and renew Duck RKP keyboxes
-base: Fall back to the native Duck RKP service
-base: rkp: Only treat user-imported keyboxes as blocking Duck RKP
-Evolver: Show automatic Duck RKP provisioning status
-Evolver: Show native Duck RKP provisioning errors
-Evolver: TrickyStore: Hide device RKP on unsupported devices
-core: trickystore: Derive attestation version from spoofed first API level
-core: trickystore: Emit legacy Keymaster encoding when HAL version is unknown
-core: trickystore: Harden software-attestation eligibility and leaf serial
-core: trickystore: Fix spoof on binder chain probe
-core: pif: Keep the numeric release when the fingerprint says CANARY
-expose AOSP adaptive Wi-Fi connectivity setting
-don't enable "send device name" option by default for new Wi-Fi networks
-extras: Drop SansSerif Fonts
+SystemUI: DynamicIsland: Add an in-call card with call controls
+SystemUI: DynamicBar: Offer the CallStyle buttons and call controls
+SystemUI: DynamicBar: Fix notification re-add and signature map races
+SystemUI: DynamicIsland: Add the ColorOS media card
+SystemUI: DynamicIsland: Stack every live activity like ColorOS
+SystemUI: DynamicIsland: Use the ColorOS glass card for the flashlight
+SystemUI: DynamicIsland: Step aside for media and ongoing activities inside their app
+SystemUI: DynamicIsland: Take the size of the chip being shown
+SystemUI: Show a front-camera bubble during fullscreen screen recording
+SystemUI: Option to keep the screen awake while screen recording
+SystemUI: QS: Add Nothing OS 5.0 color styles to the Nothing panel
+SystemUI: Use 6 NothingOS QS columns on large portrait screens
+SystemUI: Update Nothing brightness slider while dragging
+SystemUI: Fit Nothing brightness mirror backdrop to the slider
+core: AxDialogBlurController: Add toggle for dialog and toast blur
+SystemUI: Add more blur support in system
+services: Add Iris, Desaturate and Shutter screen off animations
+services: Fix custom screen off animations for A17
+fonts: Add user-supplied system emoji font
+SystemUI: NetworkTraffic: Fix sampling bugs and share one monitor
+SystemUI: Preserve clock typography when showing seconds
+SystemUI: Add haptic feedback to the auto brightness button
+SystemUI: DynamicBar: size all keyguard battery chip info like the other AOD lines
+SystemUI: Request MODIFY_PROFILES for the profiles tile
+Evolver: PlayIntegrityFix: Suggest similar initial level device
+Evolver: PlayIntegrityFix: Fix crash when leaving screen during fetch
+Evolver: PlayIntegrityFix: Add missing select button in device picker
+Evolver: TrickyStore: Reduce keybox expiring threshold to 7 days
+Evolver: quicksettings: ask for a SystemUI restart on QS style changes
+AppDataBackup: Show app icons without tinted container
+Settings: AppDataUsage: Fix NPE when package name is null
+Settings: Fix reboot flow for BT dev settings
+Settings: Add missing adaptive connectivity icon
+CameraProviderManager: Propagate HAL failures in torch strength control path
