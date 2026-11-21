@@ -8,65 +8,201 @@ Notes:
 
 Device changes:
 ==============================
-ViPER4Android: Add the ViPER4Android audio effects app
-Firmware: Update the stock base to ZUXOS 2.5.10.068
-GameTuning: Run frame interpolation and super resolution for games
-GameTuning: Select the graphics driver per game
-Pen: Add a writing vibration page with strength levels, on by default
-Battery: Charge to 100% when charging control is off
-Display: Raise the top of the display cutout
-McfgLoader: Show the profile step with progress while carrier profiles apply and retry IMS registration once afterwards
+GameTuning: Add a target frame rate for frame interpolation
+GameTuning: Stop applying values the game profile does not set: no 70% render resolution in Battery mode, no 41°C temperature target, and boosts last as long as the profile says
+GameTuning: Remove low battery protection
+GameTuning: Move render resolution to the Graphics tab and offer a game restart after graphics changes
+GameTuning: Save the graphics driver in each preset and show it when importing presets
+GameTuning: Show the options a preset changes as chips in its details
+GameTuning: Set the frame drop that triggers a boost as a range
+Touch: Keep high touch sampling off when it is turned off for a game
+Pen: Keep writing vibration after a reboot, during handwriting input and in more note apps
+Pen: Stop the stylus details page from crashing or closing
+Battery: Allow charging limits down to 20%
+Battery: Stop charging from halting at 80% after the battery protection of the stock firmware was used
+AOD: Keep the always-on display brightness from jumping up on lock while auto brightness is on
+Dolby: Apply the graphic equalizer at the right strength and fix its band frequencies
+DolbyVision: Show black instead of wrong colours while Dolby Vision playback starts
+McfgLoader: Reapply carrier profiles after every modem firmware update
+CarrierConfig: Update the carrier defaults to ZUXOS 2.5.10.068
 
 Unofficial ROM changes:
 ==============================
-GameSpace: Add frame interpolation, super resolution, touch sensitivity and pen tiles
-GameSpace: Save in-game option changes per game
-GameSpace: Choose and reorder the performance overlay items and snap it to the top centre
-SystemUI: ColorOS QS: Lay tablets out on four centred tile columns
-SystemUI: ColorOS QS: Edit the panel items in the tile editor
-SystemUI: ColorOS QS: Toggle automatic brightness from its glyph
-SystemUI: QS: Shrink the Nothing tiles on tablets
-SystemUI: DynamicIsland: Expand stacked popups into a list of cards from the page dots in the ColorOS style and show the last used card once the island collapses
-SystemUI: DynamicIsland: Dismiss alarms from the popup
-SystemUI: DynamicIsland: Close the popup on the home gesture
-SystemUI: DynamicIsland: Close the open popup when the island style changes
-SystemUI: DynamicIsland: Stop the ColorOS island from staying empty and untappable, or its content blurred or pushed out, after rotating during its animation
-SystemUI: dt2s: Stop the double tap that wakes the device from the always-on display from putting it back to sleep
-SystemUI: QS: Stop SystemUI from being killed after several rotations
+GameSpace: Add a target frame rate to the frame interpolation tile
+GameSpace: Stop lowering the game resolution in Battery mode
+GameSpace: Apply touch settings and show the performance overlay only while the game is fullscreen
+GameSpace: Measure the performance overlay frame rate on the game itself, not on popups
+GameSpace: Show frame interpolation and super resolution in the session notice and list only what the session changed
+GameSpace: Move the gesture lock to the Touch tab
+GameSpace: Add the games installed while auto detection was off when it is turned on
+Shell: FloatingWindows: Open apps that cannot be resized in floating windows
+Shell: FloatingWindows: Let permission dialogs be tapped while a floating window covers them
+Shell: FloatingWindows: Keep mini windows where they were when they are opened again
+Shell: FloatingWindows: Show floating windows again right after leaving Recents
+Shell: FloatingWindows: Keep floating windows above the app that Back returns to from Overview
+Shell: FloatingWindows: Stop floating windows from blinking out while a Home gesture runs
+Shell: FloatingWindows: Pick the right app handle colour over dark status bars
+Shell: FloatingWindows: Fade floating windows in and out with Overview
+Shell: FloatingWindows: Keep floating and mini windows gliding after a fast release
+Shell: FloatingWindows: Stop a fast throw toward a corner from turning a window into a mini window
+SystemUI: DynamicIsland: Show the app icon in the media pill when there is no artwork, such as while casting
+SystemUI: DynamicIsland: Stop the card blur from showing as a rectangle while a card opens or closes
+SystemUI: DynamicIsland: Draw ColorOS-style popups with Liquid Glass
+SystemUI: DynamicIsland: Cut the media play button glyph out of its disc on dark cards
+SystemUI: ColorOS QS: Stop notification blur from lingering after opening an app or the tile editor
+SystemUI: Keep the status bar clock colour right after the clock moves
+SystemUI: Stop the second line of collapsed notifications from being cut off in some languages
+SystemUI: Use a lighter title font for notifications in Korean, Japanese and Chinese
+SystemUI: Keep lockscreen notifications at full height
+SystemUI: Hide lockscreen notifications while the PIN bouncer opens
+SystemUI: GlobalActions: Show the power menu text in the system language
+Sidebar: Stop smart clipboard items from getting lost or wrong and fix a crash after switching users
 
 Notable ROM changes:
 ==============================
-SystemUI: DynamicIsland: Add an in-call card with call controls
-SystemUI: DynamicBar: Offer the CallStyle buttons and call controls
-SystemUI: DynamicBar: Fix notification re-add and signature map races
-SystemUI: DynamicIsland: Add the ColorOS media card
-SystemUI: DynamicIsland: Stack every live activity like ColorOS
-SystemUI: DynamicIsland: Use the ColorOS glass card for the flashlight
-SystemUI: DynamicIsland: Step aside for media and ongoing activities inside their app
-SystemUI: DynamicIsland: Take the size of the chip being shown
-SystemUI: Show a front-camera bubble during fullscreen screen recording
-SystemUI: Option to keep the screen awake while screen recording
-SystemUI: QS: Add Nothing OS 5.0 color styles to the Nothing panel
-SystemUI: Use 6 NothingOS QS columns on large portrait screens
-SystemUI: Update Nothing brightness slider while dragging
-SystemUI: Fit Nothing brightness mirror backdrop to the slider
-core: AxDialogBlurController: Add toggle for dialog and toast blur
-SystemUI: Add more blur support in system
-services: Add Iris, Desaturate and Shutter screen off animations
-services: Fix custom screen off animations for A17
-fonts: Add user-supplied system emoji font
-SystemUI: NetworkTraffic: Fix sampling bugs and share one monitor
-SystemUI: Preserve clock typography when showing seconds
-SystemUI: Add haptic feedback to the auto brightness button
-SystemUI: DynamicBar: size all keyguard battery chip info like the other AOD lines
-SystemUI: Request MODIFY_PROFILES for the profiles tile
-Evolver: PlayIntegrityFix: Suggest similar initial level device
-Evolver: PlayIntegrityFix: Fix crash when leaving screen during fetch
-Evolver: PlayIntegrityFix: Add missing select button in device picker
-Evolver: TrickyStore: Reduce keybox expiring threshold to 7 days
-Evolver: quicksettings: ask for a SystemUI restart on QS style changes
-AppDataBackup: Show app icons without tinted container
-Settings: AppDataUsage: Fix NPE when package name is null
-Settings: Fix reboot flow for BT dev settings
-Settings: Add missing adaptive connectivity icon
-CameraProviderManager: Propagate HAL failures in torch strength control path
+SystemUI: qs: Add the Liquid Glass base from PenguinOS
+Evolver: Add a Liquid Glass settings screen
+Give apps' bottom bars iOS Liquid Glass
+Give Compose bottom bars the glass capsule too
+Evolver: Add the Liquid Glass tab bars
+SystemUI: Draw the notification shade with Liquid Glass
+SystemUI: Add a dual tone shade option for Liquid Glass
+SystemUI: Make Liquid Glass notifications read like iOS
+SystemUI: Give the ColorOS Liquid Glass style frosted notification cards
+SystemUI: notification: Add the light ColorOS frost to cards and footer
+SystemUI: notification: Give pinned heads-ups their own glass
+SystemUI: notification: Move heads-ups into the stack as the shade opens
+SystemUI: Spring pressed notifications under Liquid Glass
+SystemUI: qs: Draw the stock sliders with Liquid Glass
+SystemUI: Draw the shade overlay volume slider with Liquid Glass
+SystemUI: brightness: Draw the auto brightness button with Liquid Glass
+SystemUI: Use a Liquid Glass background on the compact media card
+SystemUI: Liquid Glass PIN keys with the Quick Settings press
+SystemUI: DynamicIsland: Draw the island glass with Liquid Glass
+SystemUI: DynamicIsland: Default to the ColorOS style
+Evolver: DynamicIsland: Default the ColorOS style switch to on
+SystemUI: DynamicIsland: Open popups below the camera cutout
+SystemUI: DynamicIsland: Taller pill for calls and tinted media pill
+SystemUI: DynamicIsland: Open the call card when a call first shows
+SystemUI: ColorOS island: Apply the island height scale
+SystemUI: Keep unavailable ColorOS tiles readable, drop island popup shadow
+SystemUI: qs: Unfold the ColorOS panel as a cascade
+SystemUI: QS: ColorOS: Add long press actions to the header buttons
+SystemUI: QS: ColorOS: Keep the round tile grid on 4 columns
+SystemUI: Fit compact QS tiles to dense grids
+SystemUI: Fix inactive icon color on Nothing style circle tiles
+QS: show Caffeine remaining time by adding it to default large tiles
+SystemUI: qs: PreferredNetworkTile: drop 2G and 3G
+SystemUI: Add advanced edge lighting designs [1/2]
+Evolver: Add advanced edge lighting designs [2/2]
+SystemUI: Extend edge lighting to unlocked device [1/2]
+Evolver: Extend edge lighting to unlocked device [2/2]
+SystemUI: Add a lock screen display timeout [1/2]
+Settings: Add a lock screen display timeout [2/2]
+base: Add Swift Backup import and export support
+AppDataBackup: add call log, message, and Wi-Fi backups with Swift imports
+AppDataBackup: Fix Swift imports and support large backups
+core: Exclude selected apps from automatic dialog and toast blur
+SystemUI: GlobalActions: Honor the dialog blur toggle
+SystemUI: Fix notifications flickering over bouncer
+SystemUI: Fix lingering blur after closing the locked shade
+SystemUI: Fix blur surface settling before shade expansion
+SystemUI: Fix blurred background in activatable notification view
+SystemUI: notification: Fade the card blur regions with the stack
+SystemUI: Drop notification blur regions when the stack is hidden
+renderengine: Reuse the blur composition surface across frames
+renderengine: Stop allocating blur textures every frame
+SystemUI: Fix statusbar brightness control gesture conflicts
+SystemUI: Update long click intent for the locale tile
+SystemUI: screenshot: Fix stale UI after partial screenshot
+display: Don't update flicker refresh rate votes while display is off
+DisplayManagerService: Don't defer unknown displays' transaction
+SystemUI: Exclude QS contacts from lockscreen sleep gestures
+SystemUI: Ignore shade touches in home double-tap sleep
+Evolver: relocate double tap to sleep into Miscellaneous gestures
+SystemUI: Clear stale Smartspace anchor for the small clock
+SystemUI: Fix and refine custom gradient clock chip
+SystemUI: Align gradient color for clock with other elements
+Evolver: Fix custom gradient preview in clock chip picker
+Evolver: Fix clock chip gradient angle summary
+SystemUI: gradient: Add customizable gradient angle
+Evolver: Add custom gradient angle customization
+SystemUI: Support dynamic clock size for custom clock styles
+Evolver: Clock: Add dynamic size switch for custom clock styles
+SystemUI: Apply custom clock style toggle without restart
+Evolver: Clock: Apply custom clock style without restarting SystemUI
+SystemUI: Fix 24-hour formats of custom clock styles
+Evolver: Fix 24-hour formats of custom clock styles
+SystemUI: ClockStyle: Measure scrolling text where it is drawn
+SystemUI: ClockStyle: Fix content bounds of scrolling text
+SystemUI: ClockStyle: Reinflate the clock on configuration change
+SystemUI: Recreate lockscreen clock when its font changes
+Evolver: Apply lock clock font without restarting SystemUI
+SystemUI: Use shade display context for clock style and weather sections
+SystemUI: Toggle smartspace and OmniJaws weather without restart
+Evolver: Toggle smartspace and lockscreen weather without restarting SystemUI
+Evolver: Disable smartspace toggle while a custom clock style is enabled
+Evolver: Keep clock picker Apply button on screen
+Evolver: Sync clock preview with clock applied from browser
+Evolver: Add apply feedback to custom clock style screens
+Evolver: Lay out browsed clock previews like the main preview
+SystemUI: Fix custom clock visibility during AOD animation
+SystemUI: Fix missing weather icons in custom lockscreen clocks
+OmniJawsClient: Add air quality index
+resources: Add India AQI levels for OmniJaws
+Add QS Header Clock styles
+Evolver: QuickSettings: Bring back QS header clock styles
+QS Clocks: Update OOS clock style
+SystemUI: Improve OOS clock design
+SystemUI: Tune qs clocks layout
+SystemUI: Header Clocks Fix for light theme
+SystemUI: Add qs header interactive preview [1/2]
+SystemUI: Handle storage locked state for header image
+Evolver: Add qs header interactive preview with zoom and position controls
+SystemUI: Add option to hide lockscreen lock icon [1/2]
+Evolver: Add option to hide lockscreen lock icon [2/2]
+SystemUI: Fix depth wallpaper covering lockscreen status bar
+SystemUI: Use theme colors for new privacy chips
+fonts: Restore app emoji fonts when clearing custom emoji
+installd: Add call to remove replaced emoji fonts
+Evolver: EmojiStyle: Restore app emoji and serialize operations
+SystemUI: CutoutProgress: Stop the charging pulse redrawing every frame
+SystemUI: tighten CutoutProgress ring default fit to the cutout
+Evolver: extend CutoutProgress ring gap range below cutout bounds
+SystemUI: NetworkTraffic: refresh paint density on configuration change
+SystemUI: NetworkTraffic: Avoid requestLayout() during layout
+SystemUI: DynamicBar: Fix focus steal and keyboard races in reply
+SystemUI: DynamicBar: Open the app's screen when an expanded card is tapped
+SystemUI: DynamicBar: Skip silent notifications
+SystemUI: DynamicBar: Hide notification icons while the chip shows
+SystemUI: WallpaperDepthUtils: sync lifecycle and loading fixes from Lunaris
+ThreeFingersSwipe: Use a gesture monitor instead of per-event IPC
+PhoneWindowManager: Fix deadlock when toggling three fingers swipe
+LocalDisplayAdapter: Don't force own content on external displays
+Evolver: Add click sound and ripple for compose switches in spoofing UI
+SystemUI: Allow secure content capture when hiding screen capture status
+Evolver: Group screen capture settings and clarify secure capture
+base: End Tensor spoofing when its timed deadline passes
+Evolver: Add a one-hour timed mode to Tensor spoofing
+core: trickystore: Derive attestation version from the spoofed first API level
+Settings: Supply a default for the card view intrinsic dimensions
+Settings: reset_network: Lift reset button to the top and enable scrolling
+Settings: Use GTA VI sunset gradient for the Evolution X logo
+Settings: Fix remaining RTL layout mirroring
+Settings: Use SUW preference adapter for pattern size picker
+LineageParts: Fix RTL mirroring in trigger rows and color preview
+recovery: Allow user fomatting with f2fs if supported
+Updater: Move update_engine perf mode IPC off the main thread
+lineage-sdk: Enforce live display permission for setPictureAdjustment
+sdm: Preserve global PA across STC mode updates
+audiopolicy: Do not wipe device's known codec during bluetooth disconnection
+custom_rom_hide: Drop whole smaps blocks for blocked ROM mappings
+sepolicy: Add rules for custom emoji font
+iconloaderlib: Support for bitmap drawable icons
+iconloaderlib: Don't crash on stale themed icon resource IDs
+Launcher3: Use home screen label style in app drawer only mode
+fix DNS leak in VPN lockdown mode when VPN is down
+Remove emSign Root TLS CA - G3
+Aperture: Don't update the gallery button while recording a video
+pixel-style: Disable satellite SOS in Setup Wizard
+extras: BCR: Auto-update to version 3.12
